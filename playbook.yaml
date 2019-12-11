@@ -3,7 +3,7 @@
   tasks: 
    - name: Create infra with terraform
      terraform:
-       project_path: project
+       project_path: project/
        state: present
        force_init: "{{ force_init | default('False')}}"
        backend_config:
@@ -12,3 +12,6 @@
           container_name: "tfstate"
           key: "teste.terraform.tfstate"
 - hosts: "{{ arm_group | default('None')}}"
+  tasks: 
+   - name: ping
+     ping: 
