@@ -7,7 +7,7 @@
        state: present
        force_init: "{{ force_init | default('False')}}"
        backend_config:
-          resource_group_name: "cloud-shell-storage-eastus"
+          resource_group_name: "asdfasdfsss"
           storage_account_name: "RG_prd_CC_abc_abc"
           container_name: "tfstate"
           key: "teste.terraform.tfstate"
