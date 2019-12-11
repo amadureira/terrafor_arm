@@ -1,6 +1,8 @@
 ---
 - hosts: "{{ terraform_group | default('None')}}"
-  tasks: 
+  tasks:
+   - name: env
+     shell: env
    - name: Create infra with terraform
      terraform:
        project_path: project/
