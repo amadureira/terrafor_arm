@@ -19,7 +19,5 @@ resource "azurerm_subnet" "example" {
   resource_group_name  = "${azurerm_resource_group.network.name}" 
   virtual_network_name = "teste-network"
   address_prefix = "10.0.1.0/24"
-  tags = {
-      app = "example"
-  }
+
 }
