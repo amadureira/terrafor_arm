@@ -2,9 +2,6 @@
 data "azurerm_virtual_network" "networkname" {
    name = "teste-network"
    resource_group_name = "${azurerm_resource_group.networkresource.name}"
-   depends_on = [ 
-      azurerm_resource_group.appresource
-   ] 
 
 }
 
@@ -12,9 +9,6 @@ data "azurerm_subnet" "subnetname" {
   name                 =  "testsubnet"
   virtual_network_name =  data.azurerm_virtual_network.networkname.name
   resource_group_name = "${azurerm_resource_group.networkresource.name}"
-   depends_on = [ 
-    data.azurerm_virtual_network.networkname
-   ]
 
 }
 
