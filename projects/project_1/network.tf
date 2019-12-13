@@ -9,17 +9,18 @@ data "azurerm_virtual_network" "networkname" {
    
 
 }
+data "azurerm_subnet" "subnetname" {
+  filter { 
+     name = "testsubnet"
+  }
+  virtual_network_id = data.azurerm_virtual_network.networkname.id
+}
+
 output "teste" {
   value = data.azurerm_virtual_network.networkname
 }
+
 /*
-#data "azurerm_subnet" "subnetname" {
-#  filter { 
-#     name = "testsubnet"
-#  }
-#  virtual_network_id = data.azurerm_virtual_network.networkname.id
-#}
-#
 #resource "azurerm_network_interface" "interface_1" {
 #  name                = "interface_1"
 #  location            = "${azurerm_resource_group.appresource.location}"
