@@ -5,9 +5,7 @@ data "azurerm_virtual_network" "networkname" {
    depends_on = [ 
       azurerm_resource_group.appresource
    ] 
-  lifecycle { 
-    prevent_destroy =  true
-  }
+
 }
 
 data "azurerm_subnet" "subnetname" {
@@ -17,9 +15,7 @@ data "azurerm_subnet" "subnetname" {
    depends_on = [ 
     data.azurerm_virtual_network.networkname
    ]
-  lifecycle { 
-    prevent_destroy =  true
-  }
+
 }
 
 
@@ -33,9 +29,9 @@ resource "azurerm_network_interface" "interface1" {
     subnet_id                     = data.azurerm_subnet.subnetname.id
     private_ip_address_allocation = "Dynamic"
   }
-  depends_on = [ 
-   data.azurerm_subnet.subnetname
-  ]
+# depends_on = [ 
+#  data.azurerm_subnet.subnetname
+# ]
   tags = {
     environment = "staging"
   }
