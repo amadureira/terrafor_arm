@@ -1,5 +1,7 @@
 ---
 - hosts: "{{ terraform_group | default('None')}}"
+  vars: 
+   variable_object: []
   tasks:
    - name: env
      shell: env
@@ -9,6 +11,7 @@
 #      project_path: projects/project_1/
        state: "{{project_state| default('present')}}"
        force_init: "{{ force_init | default('False')}}"
+       variables: "{{ variable_object }}"
        backend_config:
           resource_group_name: "asdfasdfsss"
           storage_account_name: "RG_prd_CC_abc_abc"
