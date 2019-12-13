@@ -10,7 +10,10 @@ data "azurerm_virtual_network" "networkname" {
    }
 
 }
-
+output "teste" {
+  value = data.azurerm_virtual_network.networkname
+}
+/*
 data "azurerm_subnet" "subnetname" {
   filter { 
      name = "testsubnet"
@@ -34,4 +37,4 @@ resource "azurerm_network_interface" "interface_1" {
   }
 }
 
-
+*/
