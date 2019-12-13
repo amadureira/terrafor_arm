@@ -5,7 +5,7 @@
      shell: env
    - name: Create infra with terraform
      terraform:
-       project_path: project/
+       project_path: project/project_1/
        state: "{{project_state| default('present')}}"
        force_init: "{{ force_init | default('False')}}"
        backend_config:
