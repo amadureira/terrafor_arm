@@ -22,7 +22,7 @@ resource "azurerm_network_interface" "interface_1" {
 
   ip_configuration {
     name                          = "testconfiguration1"
-    subnet_id                     = "${azurerm_subnet.subnetname.id}"
+    subnet_id                     = data.azurerm_subnet.subnetname.id
     private_ip_address_allocation = "Dynamic"
   }
 
