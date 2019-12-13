@@ -4,12 +4,11 @@ resource "azurerm_resource_group" "appresource" {
 }
 
 data "azurerm_virtual_network" "networkname" {
-    name = "teste"
-    resource_group_name = "production"
-       tags = {
-            app = "example"
-            subnet = "homolog"
-       }
+   filter {
+       name = "tag:app"
+       value = "example"
+   }
+
 }
 
 data "azurerm_subnet" "subnetname" {
