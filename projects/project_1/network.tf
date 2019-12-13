@@ -4,6 +4,7 @@ resource "azurerm_resource_group" "appresource" {
 }
 
 data "azurerm_virtual_network" "networkname" {
+    resource_group_name = "production"
        tags  {
             app = "example"
             subnet = "homolog"
