@@ -1,11 +1,7 @@
-resource "azurerm_resource_group" "appresource" {
-  name     = "production"
-  location = "West US"
-}
 
 data "azurerm_virtual_network" "networkname" {
    name = "teste-network"
-   resource_group_name = "production"
+   resource_group_name = "${azurerm_resource_group.appresource.name}"
 }
 
 data "azurerm_subnet" "subnetname" {
@@ -15,7 +11,7 @@ data "azurerm_subnet" "subnetname" {
 }
 
 
-resource "azurerm_network_interface" "interface_1" {
+resource "azurerm_network_interface" "interface1" {
   name                = "interface1"
   location            = "${azurerm_resource_group.appresource.location}"
   resource_group_name = "${azurerm_resource_group.appresource.name}"
