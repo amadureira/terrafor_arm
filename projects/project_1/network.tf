@@ -5,6 +5,7 @@ resource "azurerm_resource_group" "appresource" {
 
 data "azurerm_virtual_network" "networkname" {
    name = "teste-network"
+   resource_group_name = "production"
    filter {
        name = "tag:app"
        value = "example"
