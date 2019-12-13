@@ -14,7 +14,7 @@ data "azurerm_subnet" "subnetname" {
 
 
 resource "azurerm_network_interface" "interface1" {
-  name                = "interface1"
+  name                = "${var.interface_name}"
   location            = "${azurerm_resource_group.appresource.location}"
   resource_group_name = "${azurerm_resource_group.appresource.name}"
 
