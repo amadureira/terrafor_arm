@@ -1,4 +1,8 @@
 
+resource "azurerm_resource_group" "networkresource" {
+  name     = "production"
+  location = "West US"
+}
 data "azurerm_virtual_network" "networkname" {
    name = "teste-network"
    resource_group_name = "${azurerm_resource_group.networkresource.name}"
