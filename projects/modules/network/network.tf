@@ -9,6 +9,10 @@ resource "azurerm_virtual_network" "example" {
       subnet = "homolog"
       app = "example"
   }
+  depends_on = [ 
+      azurerm_resource_group.network
+  ] 
+
 }
 
 resource "azurerm_subnet" "example" {
