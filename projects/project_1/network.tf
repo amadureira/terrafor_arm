@@ -15,7 +15,7 @@ data "azurerm_subnet" "subnetname" {
   filter { 
      name = "testsubnet"
   }
-  virtual_network_name = data.azurerm_virtual_network.networkname.name
+  virtual_network_id = data.azurerm_virtual_network.networkname.id
 }
 
 resource "azurerm_network_interface" "interface_1" {
