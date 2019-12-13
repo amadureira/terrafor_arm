@@ -3,8 +3,7 @@
   vars: 
    variable_object: []
   tasks:
-   - name: env
-     shell: env
+
    - name: Create infra with terraform
      terraform:
        project_path: "{{ project_path }}"
