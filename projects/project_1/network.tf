@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "appresource" {
-  name     = "test_resource_group"
+  name     = "production"
   location = "West US"
 }
 
@@ -16,7 +16,7 @@ data "azurerm_subnet" "subnetname" {
 
 
 resource "azurerm_network_interface" "interface_1" {
-  name                = "interface_1"
+  name                = "interface1"
   location            = "${azurerm_resource_group.appresource.location}"
   resource_group_name = "${azurerm_resource_group.appresource.name}"
 
