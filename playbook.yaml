@@ -10,7 +10,7 @@
 #      project_path: projects/project_1/
        state: "{{project_state| default('present')}}"
        force_init: "{{ force_init | default('False')}}"
-       variables: "{{ variable_object }}"
+#      variables: "{{ variable_object }}"
        workspace: "{{ workspace_name }}"
        backend_config:
           resource_group_name: "asdfasdfsss"
