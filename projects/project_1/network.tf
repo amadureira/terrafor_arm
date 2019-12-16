@@ -14,7 +14,7 @@ data "azurerm_subnet" "subnetname" {
 
 
 resource "azurerm_network_interface" "interface1" {
-  count               = "{interface_cout}"
+  count               = "${interface_cout}"
   name                = "${var.interface_name}-${count.index}"
   location            = "${azurerm_resource_group.appresource.location}"
   resource_group_name = "${azurerm_resource_group.appresource.name}"
