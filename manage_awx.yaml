@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  tasks: 
+   - name: Crate Template 
+     tower_project:
+        name: "{{ project_name }}"
+        organization: "Default"
+        scm_url: "{{project_address }}"
