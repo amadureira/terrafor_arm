@@ -1,9 +1,9 @@
 variable "datacenter" {
-  default = "dc1"
+  default = "LAB"
 }
 
 variable "cluster" {
-  default = "cluster1"
+  default = "HABACATES"
 }
 
 data "vsphere_datacenter" "dc" {
