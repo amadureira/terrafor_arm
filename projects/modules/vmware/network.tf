@@ -10,7 +10,6 @@ data "vsphere_compute_cluster" "compute_cluster" {
 
 
 resource "vsphere_resource_pool" "pool" {
-# count                   = 1
   name                    = "teste"
   parent_resource_pool_id = "${data.vsphere_compute_cluster.compute_cluster.resource_pool_id}"
 }
