@@ -1,15 +1,21 @@
-data "vsphere_datacenter" "datacenter" {
-  name = "LAB"
+variable "datacenter" {
+  default = "dc1"
+}
 
+variable "cluster" {
+  default = "cluster1"
+}
+
+data "vsphere_datacenter" "dc" {
+  name = "${var.datacenter}"
 }
 
 data "vsphere_compute_cluster" "compute_cluster" {
-  name          = "HABACATES"
-  datacenter_id = "${data.vsphere_datacenter.datacenter.id}"
+  name          = "${var.cluster}"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
-
-resource "vsphere_resource_pool" "pool" {
-  name                    = "teste"
+resource "vsphere_resource_pool" "resource_pool" {
+  name                    = "terraform-resource-pool-test"
   parent_resource_pool_id = "${data.vsphere_compute_cluster.compute_cluster.resource_pool_id}"
 }
