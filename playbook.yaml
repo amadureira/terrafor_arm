@@ -2,6 +2,7 @@
 - hosts: "{{ terraform_group | default('None')}}"
   vars: 
    variable_object: []
+   gather_facts: no
   tasks:
 
    - name: Create infra with terraform
