@@ -4,7 +4,7 @@ data "vsphere_datacenter" "datacenter" {
 }
 
 resource "vsphere_resource_pool" "pool" {
-  count         = 1
+# count         = 1
   name          = "teste"
   datacenter_id = "${data.vsphere_datacenter.datacenter.id}"
 }
