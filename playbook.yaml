@@ -17,7 +17,7 @@
           resource_group_name: "asdfasdfsss"
           storage_account_name: "RG_prd_CC_abc_abc"
           container_name: "{{workspace_name}}"
-          key: "teste.terraform.tfstate"
+#         key: "teste.terraform.tfstate"
 - hosts: "{{ arm_group | default('None')}}"
   tasks: 
    - name: ping
