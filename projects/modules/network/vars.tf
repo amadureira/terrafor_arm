@@ -1,1 +1,1 @@
-variable "workspace_name" {}
+#variable "workspace_name" {}
