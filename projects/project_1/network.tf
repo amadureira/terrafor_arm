@@ -2,7 +2,7 @@
 data "azurerm_subnet" "subnetname" {
   name                 = "testsubnet"
   virtual_network_name = "teste-network"
-  resource_group_name  = "${azurerm_resource_group.networkresource.name}"
+  resource_group_name  = "${data.azurerm_resource_group.networkresource.name}"
 
 }
 
