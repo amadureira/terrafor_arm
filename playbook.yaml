@@ -10,7 +10,7 @@
      terraform:
        project_path: "{{ project_path }}"
 #      project_path: projects/project_1/
-       state: "present"
+       state: "{{state_var | default('present')}}"
        force_init: "{{ force_init | default('False')}}"
        variables: "{{ variable_object }}"
 #      workspace: "{{ workspace_name }}"
